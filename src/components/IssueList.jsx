@@ -35,9 +35,7 @@ export default class IssueList extends Component {
     ) : (
             <ul>
           {data.map((issue) => (  
-            <Card key={issue.id}> Title: {issue.title} | issueId: {issue.id}
-                <CardContent>{issue.body}</CardContent>
-            </Card>
+            <Issue data={issue} />
           ))}
         </ul>
     );

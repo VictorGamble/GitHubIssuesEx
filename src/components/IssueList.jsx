@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import  {Card, CardContent} from "bloomer"
+import Issue from './Issue'
+import {Card, CardContent} from 'bloomer'
+
+
 export default class IssueList extends Component {
   state = {
     data: [],
     isLoaded: false
   };
-
   dataLoad = async () => {
     try {
       const response = await fetch(
@@ -31,15 +33,13 @@ export default class IssueList extends Component {
     return !isLoaded ? (
       <div>Loading Data</div>
     ) : (
-      <div>
-        <ul className ="message">
+            <ul>
           {data.map((issue) => (  
-            <li key={issue.url} className="message-body">
-              Title: | {issue.title} | Url: {issue.url} | Body: {issue.body}
-            </li>
+            <Card key={issue.id}> Title: {issue.title} | issueId: {issue.id}
+                <CardContent>{issue.body}</CardContent>
+            </Card>
           ))}
         </ul>
-      </div>
     );
   }
 }

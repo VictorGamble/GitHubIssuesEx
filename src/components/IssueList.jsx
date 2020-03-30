@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Panel, } from "bloomer"
+import  {Card, CardContent} from "bloomer"
 export default class IssueList extends Component {
   state = {
     data: [],

@@ -4,10 +4,10 @@ import React from 'react';
 
 
  const Issue = props => {
-    const {Issues}= props;
-    
+    const {Issues}= props; 
+    console.log("Issues are =>", Issues);
 return(
-    null
+<h2>{Issues.id}</h2>
 )
 }
 export default Issue;

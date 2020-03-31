@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import {Title} from 'bloomer';
+import ReactMarkdown from 'react-markdown';
+import {Title, Card, CardContent, CardHeader} from 'bloomer';
 
 export default class IssueDetails extends Component{
     state={
@@ -33,13 +34,17 @@ export default class IssueDetails extends Component{
 
     render(){
         const {issueDetails} = this.state
-        console.log("issueDetails are =>", issueDetails)
+
         return(
             <div>
-                <Title>
-                    {issueDetails.title}
-                </Title>
-        <p>{issueDetails.body}</p>
+                <Card>
+                    <CardHeader>
+                        {issueDetails.title}
+                    </CardHeader>
+                    <CardContent>
+                        <ReactMarkdown source={issueDetails.body} escapeHtml={false}/>
+                    </CardContent>
+                </Card>
             </div>
         )
     }

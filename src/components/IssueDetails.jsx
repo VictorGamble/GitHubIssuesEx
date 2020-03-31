@@ -34,7 +34,7 @@ export default class IssueDetails extends Component{
 
     render(){
         const {issueDetails} = this.state
-        console.log("issueDetails are =>", issueDetails)
+
         return(
             <div>
                 <Card>

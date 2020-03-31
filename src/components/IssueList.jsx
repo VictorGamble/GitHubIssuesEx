@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Issue from './Issue'
 
 
+
 export default class IssueList extends Component {
   state = {
     data: [],
@@ -21,7 +22,6 @@ export default class IssueList extends Component {
   };
   async componentDidMount() {
     const data = await this.dataLoad();
-    console.log("Data is =>", data);
     this.setState({
       isLoaded: true,
       data: data
@@ -34,8 +34,13 @@ export default class IssueList extends Component {
     ) : (
             <ul>
           {data.map((issue) => (  
-            <Issue data={data} />
+            <div>
+            <h1>{issue.title}</h1>
+            <br></br>
+           <a href={issue.url}>Link</a>
+          </div>
           ))}
+
         </ul>
     );
   }

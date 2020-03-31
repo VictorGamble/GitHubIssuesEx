@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Issue from './Issue'
 
 
-
 export default class IssueList extends Component {
   state = {
     data: [],
@@ -34,10 +33,10 @@ export default class IssueList extends Component {
     ) : (
             <ul>
           {data.map((issue) => (  
-            <div>
-            <h1>{issue.title}</h1>
+            <div key={issue.body}>
+            <h1 key={issue.id}>{issue.title}</h1>
             <br></br>
-           <a href={issue.url}>Link</a>
+           <a href={issue.url} key={issue.url}>Link</a>
           </div>
           ))}
 

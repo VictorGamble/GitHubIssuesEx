@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Issue from './Issue'
-import {Card, CardContent} from 'bloomer'
 
 
 export default class IssueList extends Component {
@@ -35,7 +34,7 @@ export default class IssueList extends Component {
     ) : (
             <ul>
           {data.map((issue) => (  
-            <Issue data={issue} />
+            <Issue data={data} />
           ))}
         </ul>
     );

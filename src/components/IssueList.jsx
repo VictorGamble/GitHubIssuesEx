@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import Issue from './Issue'
+import {Link} from 'react-router-dom'
+import Issue from './Issue';
+
 
 
 export default class IssueList extends Component {

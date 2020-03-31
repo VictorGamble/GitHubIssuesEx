@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import {Title} from 'bloomer';
+import ReactMarkdown from 'react-markdown';
+import {Title, Card, CardContent, CardHeader} from 'bloomer';
 
 export default class IssueDetails extends Component{
     state={

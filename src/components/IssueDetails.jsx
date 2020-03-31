@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-
+import {Title} from 'bloomer';
 
 export default class IssueDetails extends Component{
     state={
-        data: []
+        issueDetails: []
     }
 
   dataLoad = async () => {
@@ -23,13 +23,12 @@ export default class IssueDetails extends Component{
        console.log("Props are =>", this.props)
         try {
             const {issue_number} = this.props.match.params;
-            console.log("IssueNumber is=>",{issue_number})
             console.log("issue number is =>", issue_number);
             const issueDetails = await this.dataLoad(`https://api.github.com/repos/facebook/create-react-app/issues/${issue_number}`)
-            console.log("IssueDetails are =>", issueDetails)
+            console.log("IssueDetails1 are =>", issueDetails)
 
         this.setState({
-            data: issueDetails
+         issueDetails: issueDetails
         })
         } catch (error) {
             console.error("Error", error)
@@ -37,10 +36,15 @@ export default class IssueDetails extends Component{
         }
     }
     render(){
-        const {data} = this.state
-        console.log(data)
+        const {issueDetails} = this.state
+        console.log("issueDetails2 are =>", issueDetails)
         return(
-        <p>{data.body}</p>
+            <div>
+                <h1>
+                    {issueDetails.title}
+                </h1>
+            <p>{issueDetails.body}</p>
+            </div>
         )
     }
 }

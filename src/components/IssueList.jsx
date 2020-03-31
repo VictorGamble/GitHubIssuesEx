@@ -33,13 +33,12 @@ export default class IssueList extends Component {
     ) : (
             <ul>
           {data.map((issue) => (  
-            <div key={issue.body}>
-            <h1 key={issue.id}>{issue.title}</h1>
-            <br></br>
-           <a href={issue.url} key={issue.url}>Link</a>
-          </div>
+            <li key={issue.id}>
+              {issue.title}
+              <br/>
+            <Link to={`/issue/${issue.number}`}>Click for Issue Details</Link>
+            </li>
           ))}
-
         </ul>
     );
   }

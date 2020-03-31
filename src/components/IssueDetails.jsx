@@ -36,10 +36,14 @@ export default class IssueDetails extends Component{
         console.log("issueDetails are =>", issueDetails)
         return(
             <div>
-                <Title>
-                    {issueDetails.title}
-                </Title>
-        <p>{issueDetails.body}</p>
+                <Card>
+                    <CardHeader>
+                        {issueDetails.title}
+                    </CardHeader>
+                    <CardContent>
+                        <ReactMarkdown source={issueDetails.body} escapeHtml={false}/>
+                    </CardContent>
+                </Card>
             </div>
         )
     }
